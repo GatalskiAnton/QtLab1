@@ -11,8 +11,11 @@ class MyWidget : public QWidget
 public:
  MyWidget(QWidget *parent = nullptr)
  {
-     for (int i = 0; i < 10; ++i)
-     data.push_back(i);
+     std::ifstream file("input.txt");
+     std::string str;
+
+     while (file >> str)
+             data.push_back(stoi(str));
  }
  ~MyWidget() {};
 protected:

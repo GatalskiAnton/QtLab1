@@ -10,18 +10,17 @@ void Graph::paintEvent(QPaintEvent *event)
     painter.setPen(pen);
 
     painter.setBrush(brush);
-    int max = *(std::max_element(data.begin(), data.end()));
-    int min = *(std::min_element(data.begin(),data.end()));
+    int max = std::max(std::abs(*(std::min_element(data.begin(), data.end()))),*(std::max_element(data.begin(), data.end())));
     int dx = widgetRect.width() / data.size();
-    int dy_max = widgetRect.height() / max / 2;
-    int dy_min = widgetRect.height() / std::abs(min) / 2;
+    int dy = widgetRect.height() / max / 2;
+
 
     int mid = widgetRect.height() / 2;
 
     for (int i=0; i < data.size(); ++i)
     {
-        painter.drawRect(i* dx, data[i] >= 0 ? mid - data[i] * dy_max: mid - data[i] * dy_min, dx, data[i] >= 0 ?data[i] * dy_max : data[i] * dy_min );
-        QString str = QString::number(data[i]);
-        painter.drawText( i * dx + dx / 2, data[i] >= 0 ? mid - dy_max / 2 : mid - dy_max / 2 + dy_max , str);
+    painter.drawRect(i* dx, mid - data[i] * dy, dx, data[i] * dy);
+    QString str = QString::number(data[i]);
+    painter.drawText( i * dx + dx / 2 - 5, mid - data[i] * dy / 2, str);
     }
 }
