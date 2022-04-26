@@ -8,11 +8,11 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    MyWidget w;
-    w.show();
+//    MyWidget w;
+//    w.show();
 
-    Graph gr;
-    gr.show();
+//    Graph gr;
+//    gr.show();
 
     Tic_tac_toe tc;
     tc.show();

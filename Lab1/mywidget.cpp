@@ -22,5 +22,3 @@ void MyWidget::paintEvent(QPaintEvent *event)
   painter.drawText( i * dx + dx / 2, widgetRect.height() - dy / 2 , str);
   }
 }
-
-
