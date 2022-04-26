@@ -1,6 +1,7 @@
 #ifndef MYWIDGET_H
 #define MYWIDGET_H
 
+
 #include <QWidget>
 #include <QPainter>
 #include <fstream>

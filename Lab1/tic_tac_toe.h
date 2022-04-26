@@ -10,7 +10,7 @@ class Tic_tac_toe : public QWidget
  public:
  Tic_tac_toe(QWidget *parent = nullptr)
  {
-   data = {
+    data = {
         {1,0,1},
         {0,1,-1},
         {-1,-1,0}
